@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1">
+    <title>BD - Recuperação de Falhas</title>
+    <link rel="icon" href="src/img/icons/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="dist/css/main.min.css">
+
+    <!-- Font Roboto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;1,400&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <main class="dashboard">
+
+        <section class="transactions">
+
+            <div class="transaction">
+                <header class="header">
+                    <h2 class="title">Transação 1</h2>
+                    <button class="btn" type="button">Commit</button>
+                </header>
+
+                <form class="sql" action="">
+                    <div class="field">
+                        <label for="update_1">UPDATE</label>
+                        <input id="update_1" type="text">
+                    </div>
+                    <div class="field">
+                        <label for="set_1">SET</label>
+                        <input id="set_1" type="text">
+                    </div>                
+                    <div class="field">
+                        <label for="where_1">WHERE</label>
+                        <input id="where_1" type="text">
+                    </div>
+
+                    <button class="submit" type="submit">Run</button>
+                </form>
+            </div>
+
+            <div class="transaction">
+                <header class="header">
+                    <h2 class="title">Transação 2</h2>
+                    <button class="btn" type="button">Commit</button>
+                </header>
+            
+                <form class="sql" action="">
+                    <div class="field">
+                        <label for="update_1">UPDATE</label>
+                        <input id="update_1" type="text">
+                    </div>
+                    <div class="field">
+                        <label for="set_1">SET</label>
+                        <input id="set_1" type="text">
+                    </div>
+                    <div class="field">
+                        <label for="where_1">WHERE</label>
+                        <input id="where_1" type="text">
+                    </div>
+            
+                    <button class="submit" type="submit">Run</button>
+                </form>
+            </div>
+
+            <div class="transaction">
+                <header class="header">
+                    <h2 class="title">Transação 3</h2>
+                    <button class="btn" type="button">Commit</button>
+                </header>
+            
+                <form class="sql" action="">
+                    <div class="field">
+                        <label for="update_1">UPDATE</label>
+                        <input id="update_1" type="text">
+                    </div>
+                    <div class="field">
+                        <label for="set_1">SET</label>
+                        <input id="set_1" type="text">
+                    </div>
+                    <div class="field">
+                        <label for="where_1">WHERE</label>
+                        <input id="where_1" type="text">
+                    </div>
+            
+                    <button class="submit" type="submit">Run</button>
+                </form>
+            </div>
+
+            <div class="transaction">
+                <header class="header">
+                    <h2 class="title">Transação 4</h2>
+                    <button class="btn" type="button">Commit</button>
+                </header>
+            
+                <form class="sql" action="">
+                    <div class="field">
+                        <label for="update_1">UPDATE</label>
+                        <input id="update_1" type="text">
+                    </div>
+                    <div class="field">
+                        <label for="set_1">SET</label>
+                        <input id="set_1" type="text">
+                    </div>
+                    <div class="field">
+                        <label for="where_1">WHERE</label>
+                        <input id="where_1" type="text">
+                    </div>
+            
+                    <button class="submit" type="submit">Run</button>
+                </form>
+            </div>
+
+        </section>
+
+        <section class="wal-principle">
+            <div class="card -log">
+                <h3 class="title">LOG</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Transaction</th>
+                            <th>Table</th>
+                            <th>Line</th>
+                            <th>Attribute</th>
+                            <th>Before</th>
+                            <th>After</th>
+                        </tr>
+                    </thead>
+                
+                    <tbody>
+                        <tr>
+                            <td>Transaction 1</td>
+                            <td>Funcionario</td>
+                            <td>5</td>
+                            <td>Salario</td>
+                            <td>R$ 2.000,00</td>
+                            <td>R$ 2.800,00</td>
+                        </tr>
+                    </tbody>
+
+                    <tbody>
+                        <tr>
+                            <td>Transaction 2</td>
+                            <td>Funcionario</td>
+                            <td>4</td>
+                            <td>Salario</td>
+                            <td>R$ 1.500,00</td>
+                            <td>R$ 2.000,00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="dist/js/main.min.js"></script>
+</body>
+
+</html>
