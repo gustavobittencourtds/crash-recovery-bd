@@ -23,107 +23,51 @@
 
         <section class="transactions">
 
-            <div class="transaction">
+            <div class="transaction" data-transaction>
                 <header class="header">
                     <h2 class="title">Transação 1</h2>
                     <button class="btn" type="button">Commit</button>
                 </header>
 
                 <form class="sql" action="">
+                    <input type="hidden" name="transaction_number" value="1">
+
                     <div class="field">
                         <label for="update_1">UPDATE</label>
-                        <input id="update_1" type="text">
+                        <input id="update_1" type="text" name="update_table" value="Funcionario" readonly>
                     </div>
                     <div class="field">
-                        <label for="set_1">SET</label>
-                        <input id="set_1" type="text">
+                        <label for="set_column_1">SET</label>
+                        <input id="set_column_1" type="text" name="set_column" value="salario" readonly>
+
+                        <label for="set_equal_1">=</label>
+                        <input id="set_equal_1" type="text" name="set_value" required>
                     </div>                
                     <div class="field">
                         <label for="where_1">WHERE</label>
-                        <input id="where_1" type="text">
+                        <input id="where_1" type="text" name="where" value="" required>
+
+                        <label for="where_equal_1">=</label>
+                        <input id="where_equal_1" type="text" name="comparison" value="" required>
                     </div>
 
-                    <button class="submit" type="submit">Run</button>
-                </form>
-            </div>
-
-            <div class="transaction">
-                <header class="header">
-                    <h2 class="title">Transação 2</h2>
-                    <button class="btn" type="button">Commit</button>
-                </header>
-            
-                <form class="sql" action="">
-                    <div class="field">
-                        <label for="update_1">UPDATE</label>
-                        <input id="update_1" type="text">
-                    </div>
-                    <div class="field">
-                        <label for="set_1">SET</label>
-                        <input id="set_1" type="text">
-                    </div>
-                    <div class="field">
-                        <label for="where_1">WHERE</label>
-                        <input id="where_1" type="text">
-                    </div>
-            
-                    <button class="submit" type="submit">Run</button>
-                </form>
-            </div>
-
-            <div class="transaction">
-                <header class="header">
-                    <h2 class="title">Transação 3</h2>
-                    <button class="btn" type="button">Commit</button>
-                </header>
-            
-                <form class="sql" action="">
-                    <div class="field">
-                        <label for="update_1">UPDATE</label>
-                        <input id="update_1" type="text">
-                    </div>
-                    <div class="field">
-                        <label for="set_1">SET</label>
-                        <input id="set_1" type="text">
-                    </div>
-                    <div class="field">
-                        <label for="where_1">WHERE</label>
-                        <input id="where_1" type="text">
-                    </div>
-            
-                    <button class="submit" type="submit">Run</button>
-                </form>
-            </div>
-
-            <div class="transaction">
-                <header class="header">
-                    <h2 class="title">Transação 4</h2>
-                    <button class="btn" type="button">Commit</button>
-                </header>
-            
-                <form class="sql" action="">
-                    <div class="field">
-                        <label for="update_1">UPDATE</label>
-                        <input id="update_1" type="text">
-                    </div>
-                    <div class="field">
-                        <label for="set_1">SET</label>
-                        <input id="set_1" type="text">
-                    </div>
-                    <div class="field">
-                        <label for="where_1">WHERE</label>
-                        <input id="where_1" type="text">
-                    </div>
-            
-                    <button class="submit" type="submit">Run</button>
+                    <button class="submit" type="submit">Executar</button>
                 </form>
             </div>
 
         </section>
 
         <section class="wal-principle">
-            <div class="card -log">
-                <h3 class="title">LOG</h3>
+            <div class="card -log" data-memory-log>
+                <h3 class="title">Memória - Buffer LOG</h3>
+            </div>
+
+            <div class="card -log" data-memory-buffer>
+                <h3 class="title">Memória - Buffer Dados</h3>
+            </div>
+
+            <div class="card -log" data-disk>
+                <h3 class="title">Disco - LOG</h3>
                 <table>
                     <thead>
                         <tr>
@@ -135,7 +79,7 @@
                             <th>After</th>
                         </tr>
                     </thead>
-                
+            
                     <tbody>
                         <tr>
                             <td>Transaction 1</td>
@@ -147,17 +91,11 @@
                         </tr>
                     </tbody>
 
-                    <tbody>
-                        <tr>
-                            <td>Transaction 2</td>
-                            <td>Funcionario</td>
-                            <td>4</td>
-                            <td>Salario</td>
-                            <td>R$ 1.500,00</td>
-                            <td>R$ 2.000,00</td>
-                        </tr>
-                    </tbody>
                 </table>
+            </div>
+
+            <div class="card -log" data-disk-data>
+                <h3 class="title">Disco - Dados</h3>
             </div>
         </section>
 
