@@ -23,10 +23,10 @@
 
         <section class="transactions">
 
-            <div class="transaction" data-transaction>
+            <div class="transaction" data-name="Transação 1" data-transaction>
                 <header class="header">
                     <h2 class="title">Transação 1</h2>
-                    <button class="btn" type="button">Commit</button>
+                    <button data-commit class="btn" type="button">Commit</button>
                 </header>
 
                 <form class="sql" action="">
@@ -54,6 +54,37 @@
                     <button class="submit" type="submit">Executar</button>
                 </form>
             </div>
+            <div class="transaction" data-name="Transação 2" data-transaction>
+                <header class="header">
+                    <h2 class="title">Transação 2</h2>
+                    <button data-commit class="btn" type="button">Commit</button>
+                </header>
+
+                <form class="sql" action="">
+                    <input type="hidden" name="transaction_number" value="2">
+
+                    <div class="field">
+                        <label for="update_2">UPDATE</label>
+                        <input id="update_2" type="text" name="update_table" value="Funcionario" readonly>
+                    </div>
+                    <div class="field">
+                        <label for="set_column_2">SET</label>
+                        <input id="set_column_2" type="text" name="set_column" value="salario" readonly>
+
+                        <label for="set_equal_2">=</label>
+                        <input id="set_equal_2" type="text" name="set_value" required>
+                    </div>                
+                    <div class="field">
+                        <label for="where_2">WHERE</label>
+                        <input id="where_2" type="text" name="where" value="" required>
+
+                        <label for="where_equal_2">=</label>
+                        <input id="where_equal_2" type="text" name="comparison" value="" required>
+                    </div>
+
+                    <button class="submit" type="submit">Executar</button>
+                </form>
+            </div>
 
         </section>
 
@@ -68,35 +99,17 @@
 
             <div class="card -log" data-disk>
                 <h3 class="title">Disco - LOG</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Transaction</th>
-                            <th>Table</th>
-                            <th>Line</th>
-                            <th>Attribute</th>
-                            <th>Before</th>
-                            <th>After</th>
-                        </tr>
-                    </thead>
-            
-                    <tbody>
-                        <tr>
-                            <td>Transaction 1</td>
-                            <td>Funcionario</td>
-                            <td>5</td>
-                            <td>Salario</td>
-                            <td>R$ 2.000,00</td>
-                            <td>R$ 2.800,00</td>
-                        </tr>
-                    </tbody>
-
-                </table>
             </div>
 
             <div class="card -log" data-disk-data>
                 <h3 class="title">Disco - Dados</h3>
             </div>
+        </section>
+
+        <section class="actions">
+          <button data-checkpoint class="btn" type="button">CheckPoint</button>
+          <button data-error class="btn" type="button">Simular Falha</button>
+          <button data-recovery class="btn" type="button">Rodar Recuperação</button>
         </section>
 
     </main>

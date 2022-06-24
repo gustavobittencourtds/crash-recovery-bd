@@ -69,7 +69,8 @@ dashboard = {
           "Linha": valueToCompare,
           "Atributo": "Salário",
           "Antes": salary,
-          "Depois": newSalary
+          "Depois": newSalary,
+          "Status": "Início"
         }
 
         //Atualiza arrays
@@ -82,13 +83,56 @@ dashboard = {
         
         transacationForm.reset();
       })
+
+      // Commitar Transações
+      const commitButton = transaction.querySelector('[data-commit]');
+
+      commitButton.addEventListener('click', (e) => {
+        transaction.dataset.transaction = "Fim";
+        const commitTransaction = dashboard.logMemoryData.map(element => {
+          if(element.Transaction == transaction.dataset.name) {
+            return {...element, "Status": "Final"}
+          } else {
+            return element;
+          }
+        });
+        dashboard.logMemoryData = commitTransaction;
+        this.insertTable(memoryLogTable, "Memória - Buffer LOG", dashboard.logMemoryData);
+      });
     })
+  },
+  checkpoint: function () {
+    const _this = this;
+    const checkpointButton = document.querySelector('[data-checkpoint]');
+    checkpointButton.addEventListener('click', () => {
+      const diskLog = document.querySelector('[data-disk]');
+      const diskData2 = document.querySelector('[data-disk-data]');
+      _this.insertTable(diskLog, "Disco - LOG", dashboard.logMemoryData);
+      dashboard.logDisk = dashboard.logMemoryData;
+  
+      const updateDisk = dashboard.diskData.map(el => {
+        const newData = dashboard.bufferMemoryData.find(el2 => el2.id === el.id);
+        return newData ? newData : el;
+      });
+      
+      dashboard.diskData = updateDisk;
+      _this.insertTable(diskData2, "Disco - Dados", updateDisk);
+    });
+  },
+  recovery: function () {
+    const
+    transactions = document.querySelectorAll('[data-transaction]');
+
+    transactions.length > 0 && transactions.forEach(transaction => {
+      
+    });
   },
   init: function () {
     const diskData = document.querySelector('[data-disk-data]');
-
     this.insertTable(diskData, "Disco - Dados", dashboard.diskData);
     this.executeTransaction();
+    this.checkpoint();
+
   }
 }
 
