@@ -77,10 +77,12 @@ button {
 .dashboard {
   background-color: var(--background-color);
   padding: 2.5% 5% 5%;
-  min-width: 95vw;
+  min-width: 100vw;
+  
   min-height: 100vh;
   transition: 150ms;
   border: solid 5px transparent;
+  margin: 0 auto;
 
   &.-failure {
     border: solid 5px red;

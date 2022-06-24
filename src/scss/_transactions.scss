@@ -1,6 +1,6 @@
 .transactions {
   display: grid;
-  grid-template-columns: repeat(4, 400px);
+  grid-template-columns: repeat(5, 18%);
   justify-content: center;
   gap: 4rem;
   >.transaction {
@@ -20,7 +20,7 @@
       margin-bottom: 4rem;
 
       >.title {
-        font-size: 2rem;
+        font-size: 1.6rem;
         text-transform: uppercase;
       }
 

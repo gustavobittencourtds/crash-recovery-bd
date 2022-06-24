@@ -221,8 +221,11 @@ dashboard = {
       });
       
       
-      console.log('Desfazer: ', dashboard.undoTransactions)
-      console.log('Refazer: ', dashboard.redoTransactions)
+      console.log('UNDO: ')
+      console.table(dashboard.undoTransactions)
+
+      console.log('\n\nREDO: ')
+      console.table(dashboard.redoTransactions)
 
       const clearTableLog = {
         "Transaction": "-",
