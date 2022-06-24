@@ -76,13 +76,19 @@ button {
 
 .dashboard {
   background-color: var(--background-color);
-  padding: 5%;
-  min-width: 100vw;
+  padding: 2.5% 5% 5%;
+  min-width: 95vw;
   min-height: 100vh;
+  transition: 150ms;
+  border: solid 5px transparent;
+
+  &.-failure {
+    border: solid 5px red;
+  }
 }
 
 .actions {
-  margin: 30px 0;
+  margin-bottom: 50px;
   display: flex;
   justify-content: center;
   gap: 10px;

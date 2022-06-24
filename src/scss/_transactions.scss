@@ -10,7 +10,7 @@
 
     &[data-transaction="Fim"] {
       pointer-events: none;
-      border: 2px solid red;
+      opacity: 0.5;
     }
 
     >.header {

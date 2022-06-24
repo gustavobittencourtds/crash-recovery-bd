@@ -20,10 +20,16 @@
 <body>
 
     <main class="dashboard">
+        <section class="actions">
+            <button data-checkpoint class="btn" type="button">CheckPoint</button>
+            <button data-error class="btn" type="button">Simular Falha</button>
+            <button data-recovery class="btn" type="button">Rodar Recuperação</button>
+        </section>
+
 
         <section class="transactions">
 
-            <div class="transaction" data-name="Transação 1" data-transaction>
+            <div class="transaction" data-name="Transação 1" data-transaction >
                 <header class="header">
                     <h2 class="title">Transação 1</h2>
                     <button data-commit class="btn" type="button">Commit</button>
@@ -45,7 +51,7 @@
                     </div>                
                     <div class="field">
                         <label for="where_1">WHERE</label>
-                        <input id="where_1" type="text" name="where" value="" required>
+                        <input id="where_1" type="text" name="where" value="id" required readonly>
 
                         <label for="where_equal_1">=</label>
                         <input id="where_equal_1" type="text" name="comparison" value="" required>
@@ -54,7 +60,7 @@
                     <button class="submit" type="submit">Executar</button>
                 </form>
             </div>
-            <div class="transaction" data-name="Transação 2" data-transaction>
+            <div class="transaction" data-name="Transação 2" data-transaction >
                 <header class="header">
                     <h2 class="title">Transação 2</h2>
                     <button data-commit class="btn" type="button">Commit</button>
@@ -76,12 +82,43 @@
                     </div>                
                     <div class="field">
                         <label for="where_2">WHERE</label>
-                        <input id="where_2" type="text" name="where" value="" required>
+                        <input id="where_2" type="text" name="where" value="id" required readonly>
 
                         <label for="where_equal_2">=</label>
                         <input id="where_equal_2" type="text" name="comparison" value="" required>
                     </div>
 
+                    <button class="submit" type="submit">Executar</button>
+                </form>
+            </div>
+            <div class="transaction" data-name="Transação 3" data-transaction>
+                <header class="header">
+                    <h2 class="title">Transação 3</h3>
+                    <button data-commit class="btn" type="button">Commit</button>
+                </header>
+            
+                <form class="sql" action="">
+                    <input type="hidden" name="transaction_number" value="3">
+            
+                    <div class="field">
+                        <label for="update_3">UPDATE</label>
+                        <input id="update_3" type="text" name="update_table" value="Funcionario" readonly>
+                    </div>
+                    <div class="field">
+                        <label for="set_column_3">SET</label>
+                        <input id="set_column_3" type="text" name="set_column" value="salario" readonly>
+            
+                        <label for="set_equal_3">=</label>
+                        <input id="set_equal_3" type="text" name="set_value" required>
+                    </div>
+                    <div class="field">
+                        <label for="where_3">WHERE</label>
+                        <input id="where_3" type="text" name="where" value="id" required readonly>
+            
+                        <label for="where_equal_3">=</label>
+                        <input id="where_equal_3" type="text" name="comparison" value="" required>
+                    </div>
+            
                     <button class="submit" type="submit">Executar</button>
                 </form>
             </div>
@@ -91,25 +128,88 @@
         <section class="wal-principle">
             <div class="card -log" data-memory-log>
                 <h3 class="title">Memória - Buffer LOG</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Transação</th>
+                            <th>Tabela</th>
+                            <th>Linha</th>
+                            <th>Atributo</th>
+                            <th>Antes</th>
+                            <th>Depois</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                
+                    <tbody>
+                        <tr>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
 
             <div class="card -log" data-memory-buffer>
                 <h3 class="title">Memória - Buffer Dados</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>nome</th>
+                            <th>salario</th>
+                            <th>salvo</th>
+                        </tr>
+                    </thead>
+                
+                    <tbody>
+                        <tr>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
 
             <div class="card -log" data-disk>
                 <h3 class="title">Disco - LOG</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Transação</th>
+                            <th>Tabela</th>
+                            <th>Linha</th>
+                            <th>Atributo</th>
+                            <th>Antes</th>
+                            <th>Depois</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                
+                    <tbody>
+                        <tr>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
 
             <div class="card -log" data-disk-data>
                 <h3 class="title">Disco - Dados</h3>
             </div>
-        </section>
-
-        <section class="actions">
-          <button data-checkpoint class="btn" type="button">CheckPoint</button>
-          <button data-error class="btn" type="button">Simular Falha</button>
-          <button data-recovery class="btn" type="button">Rodar Recuperação</button>
         </section>
 
     </main>
