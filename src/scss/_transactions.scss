@@ -8,6 +8,11 @@
     padding: 2rem;
     min-height: 300px;
 
+    &[data-transaction="Fim"] {
+      pointer-events: none;
+      border: 2px solid red;
+    }
+
     >.header {
       display: flex;
       justify-content: space-between;
